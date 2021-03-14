@@ -1,0 +1,15 @@
+# BUILD.bazel
+load("@io_bazel_rules_rust//rust:rust.bzl", "rust_binary")
+
+rust_binary(
+    name = "helloworld",
+    srcs = ["helloworld.rs"],
+)
+
+platform(
+    name = "linux-armv7",
+    constraint_values = [
+        "@platforms//os:linux",
+        "@platforms//cpu:arm",
+    ],
+)
